@@ -1,6 +1,13 @@
+import { useEffect } from "react";
+import { Api } from "../../services/Api";
 import { Container } from "./styles";
 
 export const TransactionsTable = () => {
+  useEffect(() => {
+    Api.get("/transactions")
+      .then(response => console.log(response.data))
+  }, []);
+
   return (
     <Container>
       <table>
