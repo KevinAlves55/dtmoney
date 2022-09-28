@@ -9,7 +9,7 @@ import { GlobalStyle } from "./styles/Global";
 Modal.setAppElement("#root");
 
 export const App = () => {
-  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
+  const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(true);
 
   const handleOpenNewTransactionsModal = () => {
     setIsNewTransactionModalOpen(true);
@@ -25,7 +25,7 @@ export const App = () => {
       <Dashboard />
       <NewTransactionModal
         isOpen={isNewTransactionModalOpen}
-        handleCloseNewTransactionsModal={handleCloseNewTransactionsModal}
+        onRequestClose={handleCloseNewTransactionsModal}
       />
       <GlobalStyle />
     </>
