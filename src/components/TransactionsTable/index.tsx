@@ -3,7 +3,7 @@ import { TransactionsContext } from "../../TransactionsContext";
 import { Container } from "./styles";
 
 export const TransactionsTable = () => {
-  const transactions = useContext(TransactionsContext);
+  const { transactions } = useContext(TransactionsContext);
 
   return (
     <Container>
@@ -18,7 +18,7 @@ export const TransactionsTable = () => {
         </thead>
 
         <tbody>
-          {transactions.map(({ id, title, type, category, amount, createdAd }) => (
+          {transactions.map(({ id, title, type, category, amount, createdAt }) => (
             <tr key={id}>
               <td>{title}</td>
               <td className={type}>
@@ -29,7 +29,7 @@ export const TransactionsTable = () => {
               </td>
               <td>{category}</td>
               <td>{new Intl.DateTimeFormat("pt-BR").format(
-                new Date(createdAd)
+                new Date(createdAt)
               )}
               </td>
             </tr>
